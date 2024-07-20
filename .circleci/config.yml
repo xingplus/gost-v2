@@ -31,7 +31,7 @@ jobs:
           name: Build windows-amd64
           command: cd cmd/gost; env GOOS=windows GOARCH=amd64 go build -o gost-windows-amd64.exe
       - store_artifacts:
-          path: cmd/gost/gost-*.exe
+          path: .
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
