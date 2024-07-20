@@ -25,8 +25,8 @@ jobs:
           name: Install Dependencies
           command: go mod download
       - run:
-          name: Build windows-i386
-          command: env GOOS=windows GOARCH=i386 go build -o gost-windows-i386.exe
+          name: Build windows-386
+          command: env GOOS=windows GOARCH=386 go build -o gost-windows-386.exe
       - run:
           name: Build windows-amd64
           command: env GOOS=windows GOARCH=amd64 go build -o gost-windows-amd64.exe
