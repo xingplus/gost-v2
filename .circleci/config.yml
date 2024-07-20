@@ -26,13 +26,12 @@ jobs:
           command: go mod download
       - run:
           name: Build windows-386
-          command: env GOOS=windows GOARCH=386 go build -o gost-windows-386.exe
+          command: cd cmd/gost; env GOOS=windows GOARCH=386 go build -o gost-windows-386.exe
       - run:
           name: Build windows-amd64
-          command: env GOOS=windows GOARCH=amd64 go build -o gost-windows-amd64.exe
+          command: cd cmd/gost; env GOOS=windows GOARCH=amd64 go build -o gost-windows-amd64.exe
       - store_artifacts:
-          path: .
-          destination: gost-windows-*.exe
+          path: cmd/gost/gost-*.exe
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
